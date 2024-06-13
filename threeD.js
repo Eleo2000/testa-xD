@@ -47,15 +47,17 @@ dracoLoader.setDecoderPath( 'https://cdn.jsdelivr.net/npm/three@0.149.0/examples
 
 const loader = new GLTFLoader();
 loader.setDRACOLoader( dracoLoader );
+//manova an ilay modele xD... ilay lien soloina rehefa hanolo modele .glb noraisina eto xD
 loader.load( 'assets/medieval_fantasy_book.glb', function ( gltf ) {
 
     const model = gltf.scene;
     model.position.set( 1, 1, 0 );
     model.scale.set( 0.08, 0.08, 0.08 );
     scene.add( model );
-
+//ito mampandeha an io animation efa ao anatin le 3d ito ... nalaina tamin sketchfab 
     mixer = new THREE.AnimationMixer( model );
     mixer.clipAction( gltf.animations[ 0 ] ).play();
+//
 
     renderer.setAnimationLoop( animate );
 
